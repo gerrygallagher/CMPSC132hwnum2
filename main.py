@@ -3,7 +3,6 @@ import random
 
 class Node(object):
     """Doubly linked node which stores an object"""
-
     def __init__(self, element, next_node=None, previous_node=None):
         # The underscores are to prevent overwriting the variables if inherited and prevents access from outside of scope
         self.__element = element
@@ -141,8 +140,18 @@ class DoublyLinkedList(object):
         self.__size -= 1
 
 
+print()
+print()
+print()
+print("TESTS")
+print()
+print()
+print()
 
 
+
+
+print('task 1')
 dll = DoublyLinkedList()
 for i in range(10):
     dll.add_last(Node(random.randint(0, 10)))
@@ -153,8 +162,90 @@ print()
 print()
 print()
 
+print('task 2')
+print(dll.size())
 
-#task 11
+print()
+print()
+print()
+
+print('task 3')
+print(dll.is_empty())
+
+print()
+print()
+print()
+
+print('task 4')
+print(dll.get_last())
+print(dll.get_first())
+
+print()
+print()
+print()
+
+print('task 5')
+x = Node(456)
+dll.add_first(x)
+print(dll.get_previous(x))
+print(dll.get_next(x))
+
+print()
+print()
+print()
+
+print('task 6')
+dll.add_after(Node(999), x)
+dll.add_before(Node(1000), x)
+for i in dll:
+    print(i)
+
+print()
+print()
+print()
+
+print('task 7')
+dll.add_last(Node(2222))
+dll.add_first(Node(2222))
+for i in dll:
+    print(i)
+
+print()
+print()
+print()
+
+print('task 8')
+dll.remove(x)
+for i in dll:
+    print(i)
+
+print()
+print()
+print()
+
+print('task 9')
+print('See task 11 and 12')
+for i in dll:
+    print(i)
+
+print()
+print()
+print()
+
+print('task 10')
+testlist = [1,2,3,4,5]
+iterator = iter(testlist)
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+
+print()
+print()
+print()
+
+
+print('task 11')
 add2 = lambda num : num + 2
 dll.map(add2)
 for i in dll:
@@ -164,7 +255,7 @@ print()
 print()
 print()
 
-#task 12
+print('task 12')
 multby5 = lambda num : num * 5
 dll.map(multby5)
 for i in dll:
@@ -174,188 +265,26 @@ print()
 print()
 print()
 
-
-
-
-# task 13
-
-# remove mults of 6
-
+print('task 13')
 current = dll.get_first()
 while (current != dll.get_last().get_next()):
     next = current.get_next()
     if (current.get_element() % 6 == 0):
         dll.remove(current)
     current = next
-
 for i in dll:
     print(i)
 
-
 print()
 print()
 print()
 
-
-#task 14
-
+print('task 14')
 current = dll.get_first()
 while (current != dll.get_last().get_next()):
     next = current.get_next()
     if (current.get_element() % 2 == 1):
         dll.remove(current)
-
     current = next
-
 for i in dll:
     print(i)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""**Task 1 (5 points)**: Using the constructor from the **DoublyLinkedList**, 
-create a new doubly linked list of random integers between 1 and 10."""
-"""## Using a Doubly Linked List
-The given **DoublyLinkedList** Python class
-contains helpful methods for using a doubly linked list.
-Answer the following questions while implementing
-the methods of the **DoublyLinkedList** class.
-**Task 2 (10 points)**: Implement the `size` method that returns the size of a 
-doubly linked list.
-```python
-def size(self):
-  '''Returns the number of elements in the list.'''
-  pass 
-```
-"""
-# Test your implementation here
-"""**Task 3 (5 points)**: Implement the `is_empty` method that checks
-whether a doubly linked list is empty.
-```python
-def is_empty(self):
-  '''Returns the number of elements in the list'''
-  pass
-```
-"""
-# Test your implementation here
-"""**T4 (10 points)**: Implement the methods `get_first` and `get_last`
-to get the first and the last element of the list, respectively.
-_Hint_: Return an exception in case the list is empty.
-```python
-def get_first(self):
-  '''Get the first element of the list'''
-  pass
-def get_last(self):
-  '''Get the last element of the list'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 5 (10 points)**: Implement the methods `get_previous` and `get_next`
-to get the previous and the next node of the list, respectively.
-_Hint_: Return an exception in case the list is empty.
-```python
-def get_previous(self, node):
-  '''Returns the node before the given node'''
-  pass      
-def get_next(self, node):
-  '''Returns the node after the given node'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 6(10 points)**: Implement the methods `add_before` and `add_after`
-to respectively insert new elements before and after a node of the list.
-```python
-def add_before(self, new, existing):
-  '''Insert the new before existing'''
-  pass
-def add_after(self, new, existing):
-  '''Insert the new after existing'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 7 (10 points)**: Implement the methods `add_first` and `add_first`
-to respectively insert new nodes in the beginning and in the end of a list.
-```python
-def add_first(self, new):
-  '''Insert the node at the head of the list'''
-  pass
-def add_last(self, new):
-  '''Insert the node at the tail of the list'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 8 (10 points)**: Implement the method `remove` to remove
-a node from a list.
-```python
-def remove(self, node):
-  '''Removes the given node from the list'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 9 (10 points)**: Implement the method `map` to apply a function on
-each element of a list.
-```python
-def map(self, function):
-  '''Run function on every element in the list'''
-  pass
-```
-"""
-# Test your implementation here
-"""**Task 10 (10 points)**: Implement the method `next` to iterate the elements
-of a list.
-```python
-'''Standard methods for Python iterator'''
-def __iter__(self):
-  pass
-def __next__(self):
-  pass
-```
-"""
-# Test your implementation here
-"""## Applying methods of the DoublyLinkedList and Node classes
-Answer the following questions by using
-the implemented methods from the Node and DoublyLinkedList classes.
-Apply your operations on the list you created in T1.
-**Task 11 (5 points)**: Add 2 to each element of the list.
-_Hint_: Use the method `map`.
-"""
-"""
-**Task 12 (5 points)**: Multiply each element of the list by 5.
-_Hint_: Use the methods `map`, `get_previous`, and `set_element`."""
-"""
-**Task 13 (5 points)**: Remove elements that are multiplies of 6.
-_Hint_: Use the methods `next` and `remove`."""
-"""
-**Task 14 (5 points)**: Remove elements from the list that are odd numbers. 
-_Hint_: Use the methods `get_previous` and `remove`."""
-"""## Proving performance properties
-**Task 15 (5 points)**: Prove when the complexity to delete a node in a doubly 
-"linked list is $O(1)$ and $O(n)$"
-"""
