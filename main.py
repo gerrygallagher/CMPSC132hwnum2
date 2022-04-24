@@ -199,13 +199,13 @@ print()
 
 #task 14
 
-current = dll.get_first();
+current = dll.get_first()
 while (current != dll.get_last().get_next()):
-    next = current.get_next();
+    next = current.get_next()
     if (current.get_element() % 2 == 1):
-        dll.remove(current);
+        dll.remove(current)
 
-    current = next;
+    current = next
 
 for i in dll:
     print(i)
